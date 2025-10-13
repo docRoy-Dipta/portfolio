@@ -9,7 +9,8 @@
 
 ## Setup
 1. Add slideshow images to `/public/images/` (e.g., about1.jpg, about2.jpg).
-2. Run `npm run dev` to test.
+2. Run 'npm install'
+3. Run `npm run dev` to test.
 
 ## Customization
 - Update `aboutImages` array in `app/page.tsx` with your image paths.
