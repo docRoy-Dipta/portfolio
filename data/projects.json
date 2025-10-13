@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Sales Dashboard",
+    "description": "A Power BI dashboard analyzing sales data with interactive visualizations.",
+    "image": "https://www.geckoboard.com/blog/content/images/size/w1000/2024/01/best-sales-dashboard-software-blog.png",
+    "link": "https://github.com/yourusername/sales-dashboard",
+    "service": "Core Data Services"
+  },
+  {
+    "title": "Python Automation Script",
+    "description": "Automated data processing and reporting using Python and Pandas.",
+    "image": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*3xLIr2uzIrWHW5wPa977VQ.png",
+    "link": "https://github.com/yourusername/python-automation",
+    "service": "Machine Learning and Automation"
+  },
+  {
+    "title": "Business Analytics Project",
+    "description": "Supported business development with data-driven insights and visualizations.",
+    "image": "https://cdn.prod.website-files.com/605c9e03d6553a5d82976ce2/65ca6bb8bb240ca9b148207a_business-analyst-roles.png",
+    "link": "https://github.com/yourusername/business-analytics",
+    "service": "Core Data Services"
+  },
+  {
+    "title": "Data Visualization Tool",
+    "description": "Custom data visualization app built with Python and Matplotlib.",
+    "image": "https://www.beyondkey.com/blog/wp-content/uploads/2022/08/Data-Visualization-Software-1024x454.jpg",
+    "link": "https://github.com/yourusername/data-viz-tool",
+    "service": "Core Data Services"
+  },
+    {
+    "title": "Data Visualization Tool",
+    "description": "Custom data visualization app built with Python and Matplotlib.",
+    "image": "https://negliadesign.com/wordpress/assets/Website-Development-feature3.001.jpg",
+    "link": "https://github.com/yourusername/data-viz-tool",
+    "service": "Website Development"
+  }
+]
