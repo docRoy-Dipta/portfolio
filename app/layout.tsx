@@ -10,13 +10,13 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Your Name - Data and Analytics Portfolio",
-  description: "Professional portfolio showcasing data analysis, visualization, business development, Power BI dashboards, and Python automation services.",
-  keywords: "data analysis, data visualization, Power BI, Python analytics, business development",
+  title: "OrynTel - Data and Analytics Solutions",
+  description: "OrynTel provides professional data analysis, visualization, business development, Power BI dashboards, Python automation, and quality assurance services.",
+  keywords: "data analysis, data visualization, Power BI, Python analytics, business development, software quality assurance, H2O.ai, OrynTel",
   openGraph: {
-    title: "Your Name - Data and Analytics Portfolio",
-    description: "Showcasing my expertise in data and analytics.",
-    url: "https://yourdomain.com",
+    title: "OrynTel - Data and Analytics Solutions",
+    description: "Leading data analytics company specializing in transforming data into actionable insights.",
+    url: "https://oryntel.com",
     type: "website",
   },
 };

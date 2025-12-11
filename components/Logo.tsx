@@ -1,19 +1,19 @@
-// components/OryntelLogo.tsx
+// components/Logo.tsx
 import React from 'react';
 
-interface OryntelLogoProps {
+interface LogoProps {
   width?: number;
   height?: number;
   className?: string;
   showText?: boolean;
 }
 
-export default function OryntelLogo({ 
+export default function Logo({ 
   width = 200, 
   height = 240, 
   className = "",
   showText = true 
-}: OryntelLogoProps) {
+}: LogoProps) {
   return (
     <svg 
       width={width} 

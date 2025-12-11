@@ -33,7 +33,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="text-5xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-white"
         >
-          It’s more than a portfolio. <br /> It’s your data-driven future.
+          Transform Data into <br /> Actionable Insights with OrynTel
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl md:text-2xl mb-6 text-gray-600 dark:text-gray-300"
         >
-          Expert data and analytics services. Start free today.
+          Expert data analytics, visualization, and quality assurance services.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export default function Home() {
       <section className="py-16 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            About Me
+            About OrynTel
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* Slideshow */}
@@ -80,7 +80,7 @@ export default function Home() {
             {/* Bio, Skills, Tools */}
             <div className="w-full md:w-1/2">
               <p className="mb-6 text-gray-600 dark:text-gray-300">
-                Hi, I&apos;m Your Name, a passionate data analyst with experience in transforming data into actionable insights. I specialize in helping businesses make data-driven decisions.
+                OrynTel is a leading data analytics company with expertise in transforming data into actionable insights. We specialize in helping businesses make data-driven decisions through advanced analytics, visualization, and quality assurance.
               </p>
               <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Skills</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-600 dark:text-gray-300">
@@ -233,26 +233,30 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 text-center bg-primary dark:bg-blue-800 text-white">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl font-bold mb-4"
-        >
-          Start Growing Your Brand Today
-        </motion.h2>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <Link href="/contact">
-            <button className="bg-white text-primary px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-200 transition">
-              Contact Me
-            </button>
-          </Link>
-        </motion.div>
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-3xl p-12 text-center shadow-2xl">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl font-bold mb-4"
+            >
+              Start Growing Your Brand Today
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Link href="/contact">
+                <button className="bg-white text-primary px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-200 transition">
+                  Contact Me
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
       </section>
     </div>
   );

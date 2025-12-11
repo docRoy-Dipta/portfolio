@@ -19,7 +19,7 @@ import {
   Linkedin,
   LucideIcon
 } from "lucide-react";
-import OryntelLogo from "@/components/OryntelLogo";
+import Logo from "@/components/Logo";
 
 // Type definition for better type safety
 interface Skill {
@@ -123,7 +123,7 @@ export default function About() {
         >
           <div className="mb-8 inline-block">
             <div className="mx-auto flex items-center justify-center">
-              <OryntelLogo 
+              <Logo 
                 width={160} 
                 height={200} 
                 className="drop-shadow-lg"
