@@ -59,3 +59,6 @@ npm
 server
 portfolio.git/
 paths-to-remove.txt
+/app/generated/prisma
+
+/app/generated/prisma
