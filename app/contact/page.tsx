@@ -1,56 +1,135 @@
 "use client";
 
 import { useState } from "react";
+import { Phone, FileText, Building2, CircleHelp, BookOpen, Download } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import { Card, CardContent } from "@/components/ui/card";
+import { Toaster } from "@/components/ui/sonner";
+import Link from "next/link";
+
+const helpfulLinks = [
+  {
+    icon: FileText,
+    title: "Looking for project documentation?",
+    description: "Please visit our ",
+    linkText: "Projects page",
+    linkHref: "/projects",
+    additionalText: ". If the information you're looking for isn't there, please wait 1-2 days and try again.",
+  },
+  {
+    icon: Building2,
+    title: "Need a phone number or address for our office?",
+    description: "Please visit our ",
+    linkText: "About page",
+    linkHref: "/about",
+    additionalText: ".",
+  },
+  {
+    icon: BookOpen,
+    title: "Would you like to learn more about our services?",
+    description: "Please visit our ",
+    linkText: "Services page",
+    linkHref: "/services",
+    additionalText: ".",
+  },
+  {
+    icon: Download,
+    title: "Are you looking for valuable resources?",
+    description: "Explore our resources page for a collection of case studies, infographics, and more.",
+  },
+];
 
 export default function Contact() {
-  const [messages, setMessages] = useState<any[]>([]);
-  const [loading, setLoading] = useState(false);
-
-  async function fetchMessages() {
-    setLoading(true);
-    try {
-      const res = await fetch("/api/messages");
-      const data = await res.json();
-      setMessages(data);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  }
-
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900 dark:text-white">
-        Contact Me
-      </h1>
-
-      <ContactForm />
-
-      {/* Button to fetch messages */}
-      <div className="text-center mt-6">
-        <button
-          onClick={fetchMessages}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow-md transition-colors"
+    <>
+      <Toaster position="top-right" richColors />
+      <div className="min-h-screen">
+        {/* Hero Section */}
+        <div 
+          className="relative h-[400px] bg-cover bg-center flex items-center"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1599692061996-0323fb50a160?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw4fHxwcm9mZXNzaW9uYWwlMjBvZmZpY2UlMjBidWlsZGluZyUyMGV4dGVyaW9yJTIwb3IlMjBidXNpbmVzcyUyMGxhbmRzY2FwZSUyMGZvciUyMGNvbnRhY3QlMjBwYWdlJTIwaGVybyUyMGJhY2tncm91bmQlMjBidXNpbmVzcyUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzY4ODUyNjAzfDA&ixlib=rb-4.1.0&q=85')",
+          }}
         >
-          {loading ? "Loading..." : "Get Messages"}
-        </button>
-      </div>
-
-      {/* Display messages */}
-      {messages.length > 0 && (
-        <div className="mt-8 space-y-4">
-          {messages.map((m) => (
-            <div key={m.id} className="border p-4 rounded shadow-sm">
-              <p><strong>Name:</strong> {m.name}</p>
-              <p><strong>Email:</strong> {m.email}</p>
-              <p><strong>Message:</strong> {m.message}</p>
-              <p className="text-sm text-gray-500">{new Date(m.createdAt).toLocaleString()}</p>
-            </div>
-          ))}
+          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <h1 className="text-5xl md:text-6xl font-bold text-white">
+              Contact Us
+            </h1>
+          </div>
         </div>
-      )}
-    </div>
+
+        {/* Main Content */}
+        <div className="container mx-auto px-4 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Left Sidebar */}
+            <div className="lg:col-span-1 space-y-8">
+              {/* Helpful Links */}
+              {helpfulLinks.map((item, index) => (
+                <div key={index} className="space-y-2">
+                  <div className="flex items-start gap-3">
+                    <item.icon className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-base mb-2">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        {item.description}
+                        {item.linkText && (
+                          <Link 
+                            href={item.linkHref || "#"} 
+                            className="text-primary hover:underline"
+                          >
+                            {item.linkText}
+                          </Link>
+                        )}
+                        {item.additionalText}
+                      </p>
+                    </div>
+                  </div>
+                  {index < helpfulLinks.length - 1 && (
+                    <div className="border-b border-border mt-6"></div>
+                  )}
+                </div>
+              ))}
+
+              {/* Have Another Question */}
+              <div className="pt-4">
+                <div className="flex items-start gap-3">
+                  <CircleHelp className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-base mb-2">Have another question?</h3>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      You can always call us during normal business hours (9 a.m. to 5 p.m. EST) at{" "}
+                      <a href="tel:+15551234567" className="font-semibold text-foreground hover:text-primary">
+                        +1 (555) 123-4567
+                      </a>{" "}
+                      and speak to one of our customer service team members.
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Or you can fill out our contact form and we'll make sure your message gets to the right person.
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-4">
+                      Your personal information will never be shared with third parties. Read our{" "}
+                      <Link href="/privacy" className="text-primary hover:underline">
+                        Privacy Policy
+                      </Link>{" "}
+                      to learn more about our commitment to you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Contact Form */}
+            <div className="lg:col-span-2">
+              <Card className="shadow-lg">
+                <CardContent className="p-8">
+                  <ContactForm />
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
