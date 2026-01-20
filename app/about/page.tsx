@@ -122,12 +122,9 @@ export default function About() {
           className="text-center max-w-4xl mx-auto"
         >
           <div className="mb-8 inline-block">
-            <div className="mx-auto flex items-center justify-center">
+            <div className="mx-auto flex items-center justify-center w-40 h-48">
               <OryntelLogo 
-                width={160} 
-                height={200} 
                 className="drop-shadow-lg"
-                showText={true}
               />
             </div>
           </div>
