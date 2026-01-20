@@ -61,7 +61,7 @@ export default function ContactForm() {
       {/* Name Row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="firstName" className="text-base">
+          <Label htmlFor="firstName" className="text-base text-gray-900 dark:text-white">
             First Name <span className="text-destructive">*</span>
           </Label>
           <Input
@@ -75,7 +75,7 @@ export default function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="lastName" className="text-base">
+          <Label htmlFor="lastName" className="text-base text-gray-900 dark:text-white">
             Last Name <span className="text-destructive">*</span>
           </Label>
           <Input
@@ -91,7 +91,7 @@ export default function ContactForm() {
 
       {/* Email */}
       <div className="space-y-2">
-        <Label htmlFor="email" className="text-base">
+        <Label htmlFor="email" className="text-base text-gray-900 dark:text-white">
           Email <span className="text-destructive">*</span>
         </Label>
         <Input
@@ -106,7 +106,7 @@ export default function ContactForm() {
 
       {/* Phone */}
       <div className="space-y-2">
-        <Label htmlFor="phone" className="text-base">
+        <Label htmlFor="phone" className="text-base text-gray-900 dark:text-white">
           Phone number
         </Label>
         <Input
@@ -121,7 +121,7 @@ export default function ContactForm() {
       {/* City and State */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="city" className="text-base">
+          <Label htmlFor="city" className="text-base text-gray-900 dark:text-white">
             City <span className="text-destructive">*</span>
           </Label>
           <Input
@@ -135,7 +135,7 @@ export default function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="state" className="text-base">
+          <Label htmlFor="state" className="text-base text-gray-900 dark:text-white">
             State/Region <span className="text-destructive">*</span>
           </Label>
           <Select name="state" required disabled={isSubmitting}>
@@ -156,7 +156,7 @@ export default function ContactForm() {
 
       {/* Subject */}
       <div className="space-y-2">
-        <Label htmlFor="subject" className="text-base">
+        <Label htmlFor="subject" className="text-base text-gray-900 dark:text-white">
           What brings you to OrynTel today? <span className="text-destructive">*</span>
         </Label>
         <Select name="subject" required disabled={isSubmitting}>
@@ -176,7 +176,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div className="space-y-2">
-        <Label htmlFor="message" className="text-base">
+        <Label htmlFor="message" className="text-base text-gray-900 dark:text-white">
           Message
         </Label>
         <Textarea

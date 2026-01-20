@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu, X, Sun, Moon, Monitor } from "lucide-react";
 import Logo from "./Logo";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,6 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useTheme } from "next-themes";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -24,6 +25,12 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,11 +41,29 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const cycleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else if (theme === "dark") {
+      setTheme("system");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  const getThemeIcon = () => {
+    if (!mounted) return <Monitor className="h-5 w-5" />;
+    
+    if (theme === "light") return <Sun className="h-5 w-5" />;
+    if (theme === "dark") return <Moon className="h-5 w-5" />;
+    return <Monitor className="h-5 w-5" />;
+  };
+
   return (
     <nav className={`text-white sticky top-0 z-50 shadow-md transition-all duration-300 ${
       isScrolled 
-        ? "bg-[#2c3e50]/90 backdrop-blur-md" 
-        : "bg-[#2c3e50]"
+        ? "bg-gradient-to-r from-indigo-900/95 via-purple-900/95 to-blue-900/95 backdrop-blur-md" 
+        : "bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-900"
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -62,6 +87,16 @@ export default function Navbar() {
 
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
+            {/* Theme Toggle */}
+            <button
+              onClick={cycleTheme}
+              className="p-3 hover:bg-white/10 rounded-md transition-colors"
+              aria-label={`Current theme: ${mounted ? theme : 'system'}. Click to change theme`}
+              title={`Current: ${mounted ? theme : 'system'} theme`}
+            >
+              {getThemeIcon()}
+            </button>
+
             {/* Search Icon */}
             <button
               className="p-3 hover:bg-white/10 rounded-md transition-colors"
@@ -69,13 +104,6 @@ export default function Navbar() {
             >
               <Search className="h-6 w-6" />
             </button>
-
-            {/* CTA Button - Hidden on small screens */}
-            <Link href="/services" className="hidden sm:block">
-              <Button size="lg" className="bg-[#4a90e2] hover:bg-[#357abd] text-white font-semibold px-8 py-6 text-base">
-                SERVICES
-              </Button>
-            </Link>
 
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -102,11 +130,6 @@ export default function Navbar() {
                       {link.label}
                     </Link>
                   ))}
-                  <Link href="/services" className="sm:hidden mt-4">
-                    <Button className="bg-primary hover:bg-primary/90 w-full">
-                      SERVICES
-                    </Button>
-                  </Link>
                 </div>
               </SheetContent>
             </Sheet>
